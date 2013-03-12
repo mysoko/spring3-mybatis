@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mining.app.persistence.CardinfoMapper">
+
+  <select id="getCardinfoByCardNo" parameterType="Cardinfo" resultType="Cardinfo">
+    SELECT
+        id,       
+		card_no AS cardNo,  
+		card_pass AS cardPass,
+		card_parvalue AS cardParvalue,
+		operators,
+		acct_no AS acctNo,  
+		acct_no_his AS AcctNoHis,
+		state,
+		state_his AS stateHis,
+		statemsg, 
+		statemsg_his AS statemsgHis,
+		usetime,  
+		usetime_his AS usetimeHis, 
+		supname_inner AS supnameInner,
+		supname_outer AS supnameOuter,
+		supcode_oute AS supcodeOute,
+    FROM cardinfo
+    WHERE cardNo = #{cardNo}
+  </select>
+  
+</mapper>
