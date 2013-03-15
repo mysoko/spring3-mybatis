@@ -9,9 +9,9 @@
   <select id="getAcctinfoByAcctNo" parameterType="Acctinfo" resultType="Acctinfo">
     SELECT
         id,       
-		acct_no AS acctNo,  
-		operators AS operators,
-		total_amount AS totalAmount,
+	acct_no AS acctNo,  
+	operators AS operators,
+	total_amount AS totalAmount,
     FROM acctinfo
     WHERE acctNo = #{acctNo}
   </select>
@@ -19,18 +19,18 @@
   <select id="getAcctinfoById" parameterType="Acctinfo" resultType="Acctinfo">
     SELECT
         id,       
-		acct_no AS acctNo,  
-		operators AS operators,
-		total_amount AS totalAmount,
+	acct_no AS acctNo,  
+	operators AS operators,
+	total_amount AS totalAmount,
     FROM acctinfo
     WHERE id = #{id}
   </select>
   
   <update id="updateAcctinfo" parameterType="Acctinfo">
     UPDATE acctinfo SET
-     acct_no = #{acctNo}, 
-     operators = #{operators},
-     total_amount = #{totalAmount},
+    	acct_no = #{acctNo}, 
+     	operators = #{operators},
+     	total_amount = #{totalAmount},
     WHERE id = #{id}
   </update>
 
@@ -38,8 +38,7 @@
     <selectKey keyProperty="id" resultType="int" order="AFTER">
       select last_insert_id();
     </selectKey>
-    INSERT INTO Acctinfo (acct_no,operators,total_amount)
-    VALUES (#{acctNo}, #{operators}, #{totalAmount})
+    INSERT INTO Acctinfo (acct_no,operators,total_amount) VALUES (#{acctNo}, #{operators}, #{totalAmount})
   </insert>
 
 </mapper>
