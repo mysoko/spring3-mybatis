@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.mining.app.domain.Acctinfo;
 import com.mining.app.persistence.AcctinfoMapper;
 import com.mining.app.service.AcctinfoService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AcctinfoServiceImpl implements AcctinfoService {
 	
 	@Autowired
